@@ -67,14 +67,14 @@ def main(symbol, slicee):
     
     mainn_init.dfpl.index = pd.to_datetime(mainn_init.dfpl['Date'])
     mainn_init.dfpl.drop(['Date'], axis=1, inplace=True)
-    # print(mainn_init.dfpl)
 
-    bt = Backtest(mainn_init.dfpl, MyCandlesStrat, cash=10000, margin=1/50, commission=0.0)
+    bt = Backtest(mainn_init.dfpl, MyCandlesStrat, cash=100000, margin=1/50, commission=0.0)
     stat = bt.run()
     print(stat)
 
 if __name__ == "__main__":
     symbol = '^RUI'
-    # symbol = 'BTC-USD'
+    # symbol = 'BTC-USDT'
+    symbol = 'ETH-USD'
     slicee = 0
     main(symbol, slicee)

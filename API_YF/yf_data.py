@@ -8,7 +8,7 @@ class GETT_HISTORICAL_DATA():
 
     def get_historical_data(self, symbol):
         ticker = yf.Ticker(symbol)
-        data = ticker.history(start='2012-03-11', end='2022-07-10')
+        data = ticker.history(start='2020-01-11', end='2023-11-15')
         data.drop(['Dividends'], axis=1, inplace=True)
         data.drop(['Stock Splits'], axis=1, inplace=True)        
         data.reset_index(inplace=True)        
