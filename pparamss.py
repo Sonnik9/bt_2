@@ -73,7 +73,7 @@ class STRATEGY_SET(FILTER_SET):
         self.F_BUNCH_VARIANT = 1      
         # self.PIVOT_GENERAL_TYPE = 'Classic'
         self.PIVOT_GENERAL_TYPE = 'Fibonacci'
-        self.pivot_levels_type = 5
+        self.pivot_levels_type = 4
         self.kline_period_for_piv = 30
         self.grid_decimal = 5       
 
@@ -81,33 +81,6 @@ class STRATEGY_SET(FILTER_SET):
         self.T_BUNCH_VARIANT = new_T_bunch_variant
         self.F_BUNCH_VARIANT = new_F_bunch_variant
 
-    def init_strategy_set(self):
-        self.BUNCH_DICT['T'] = [
-            self.SOLI_DEO_GLORIA,     
-            ['rsi_diver_pattern_flag', 'ma_crossover_strong_flag'],      
-            ['bband_flag', 'macd_lite_flag', 'ma_crossover_strong_flag'], 
-            
-            ['bband_flag', 'heikin_ashi_flag'],    
-            ['bband_flag', 'macd_lite_flag'],                   
-            ['bband_flag', 'rsi_overtrading_flag'], 
-            # ['bband_flag', 'macd_strong_flag'],
-            # ['bband_flag', 'macd_lite_flag', 'ma_crossover_lite_flag'],          
-            # ['ma_crossover_strong_flag'],
-            # ['ma_crossover_lite_flag']            
-        ]
-        self.BUNCH_DICT['F'] = [
-            self.SOLI_DEO_GLORIA,
-            ['rsi_diver_pattern_flag', 'ma_crossover_lite_flag'],
-            ['bband_flag', 'rsi_diver_pattern_flag'], 
-            # ['bband_flag', 'macd_lite_flag'],                     
-            # ['bband_flag', 'rsi_overtrading_flag'],
-            ['macd_lite_flag', 'ma_crossover_lite_flag'],
-            
-            # ['stoch_flag'],
-            # ['ma_crossover_strong_flag'],
-            # ['ma_crossover_lite_flag'],
-            
-        ]
 
 class INIT_PARAMS(STRATEGY_SET):
     def __init__(self) -> None:
@@ -116,7 +89,7 @@ class INIT_PARAMS(STRATEGY_SET):
 
     def init_itits(self):
         self.init_urls()
-        self.init_strategy_set()
+        
 
 
 

@@ -19,3 +19,21 @@ SQN: 0.46 - SQN (System Quality Number) меряет качество систе
 Max. Trade Duration: 79.0 - Максимальная продолжительность одной сделки в барах/периодах.
 
 Avg. Trade Duration: 8.61 - Средняя продолжительность сделок в барах/периодах.
+
+
+pip install -r requirements.txt
+pip install python-dotenv
+Установка talib:
+https://github.com/TA-Lib/ta-lib-python -----инструкция
+Linux:
+Download ta-lib-0.4.0-src.tar.gz and:
+
+$ tar -xzf ta-lib-0.4.0-src.tar.gz 
+% (ecxtraction. it could be manualy)
+% unzip {имя зип файла}.zip
+
+$ cd ta-lib/
+$ ./configure --prefix=/usr
+$ make
+$ sudo make install
+$ pip install TA-Lib
