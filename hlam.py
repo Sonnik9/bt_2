@@ -409,7 +409,7 @@
             # )
 
 
-import yfinance as yf
+# import yfinance as yf
 # import pandas_ta as tafrom 
 # import math
 # import plotly.graph_objects as go
@@ -638,3 +638,35 @@ import yfinance as yf
 
     #     data.loc[:, 'SLSignal'] = SLSignal
     #     self.dfpl = data
+
+
+
+# original strategy:
+# /////////////////////////////////////////////////////////////////////////
+        # def init(self):
+        #     super().init()
+        #     self.signal1 = self.I(mainn_init.SIGNAL)
+
+        # def next(self):
+        #     super().next()
+        #     self.sltr = 1.5
+        #     self.mysize = 0.01
+
+        #     for trade in self.trades:
+        #         if trade.is_long:
+        #             trade.sl = max(trade.sl or -np.inf, self.data.Close[-1] - self.sltr)
+        #         else:
+        #             trade.sl = min(trade.sl or np.inf, self.data.Close[-1] + self.sltr)
+
+        #     if self.signal1[-1] == 2 and len(self.trades) == 0:
+        #         # print(f"long_sl: {self.data.SLSignal[-1]}")
+        #         self.sltr = self.data.Close[-1] - self.data.SLSignal[-1]
+        #         sl1 = self.data.Close[-1] - self.sltr
+        #         self.buy(sl=sl1, size=self.mysize)
+
+        #     elif self.signal1[-1] == 1 and len(self.trades) == 0:
+        #         # print(f"short_sl: {self.data.SLSignal[-1]}")
+        #         self.sltr = self.data.SLSignal[-1] - self.data.Close[-1]
+        #         sl1 = self.data.Close[-1] + self.sltr
+        #         self.sell(sl=sl1, size=self.mysize)
+# /////////////////////////////////////////////////////////////////////////

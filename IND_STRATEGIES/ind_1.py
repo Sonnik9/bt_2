@@ -1,10 +1,10 @@
 import pandas_ta as ta
 from pparamss import INIT_PARAMS
 
-class HEIKEN_ASHI_STRATEGY(INIT_PARAMS):
+class HEIKEN_ASHI_PATTERN(INIT_PARAMS):
     def __init__(self) -> None: 
         super().__init__()       
-        self.dfpl = None
+        # self.dfpl = None
 
     def HeikenPreparators(self, data):  
         
