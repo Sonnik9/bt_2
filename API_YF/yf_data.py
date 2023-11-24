@@ -9,11 +9,11 @@ class GETT_HISTORICAL_DATA():
     def get_historical_data(self, symbol):
         start= "2022-01-1"
         end="2023-11-19"
-        # start = "2021-12-1"
-        # end = "2023-3-19"
+        start = "2020-1-1"
+        end = "2023-11-19"
         # ticker = yf.Ticker(symbol)
         # data = ticker.history(start=start, end=end)
-        data = yf.download(symbol, start=start, end=end, interval='1h')
+        data = yf.download(symbol, start=start, end=end, interval='1d')
         # print(data)
         try:
             data.drop(['Dividends'], axis=1, inplace=True)

@@ -69,7 +69,7 @@ class STRATEGY_SET(FILTER_SET):
     def __init__(self) -> None:
         super().__init__()  
         self.ind_strategy = 2
-        self.sl_strategy = 2
+        self.sl_strategy = 3
         
         self.BUNCH_DICT = {}      
         self.T_BUNCH_VARIANT = 1

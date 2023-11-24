@@ -185,3 +185,107 @@
     #     # data.loc[:, 'TP_S_Signal'] = TP_S_Signal
     #     # print(data.loc[:, 'TPSignal'].to_list())
     #     return data
+
+
+
+
+        # def next(self):
+        #     super().next()
+        #     self.mysize = 0.01
+
+            # if mainn_init.sl_strategy == 1:
+            #     for trade in self.trades:
+            #         # pass
+            #         if trade.is_long:
+            #             trade.sl = max(trade.sl or -np.inf, self.data.Close[-1] - self.sltr)
+            #         else:
+            #             trade.sl = min(trade.sl or np.inf, self.data.Close[-1] + self.sltr)
+            # if self.signal1[-1] == 2 and len(self.trades) == 0:
+
+            #     if mainn_init.sl_strategy == 1:
+            #         sl1 = mainn_init.sl_generator_one(self.data, self.signal1[-1])
+            #         try:
+            #             self.buy(sl=sl1, size=self.mysize)
+            #         except Exception as ex:
+            #             print(ex)
+            #     if mainn_init.sl_strategy == 2:
+            #         sl1, tp1 = mainn_init.sl_generator_two(self.data, self.signal1[-1])
+            #         try:
+            #             self.buy(sl=sl1, tp=tp1, size=self.mysize)
+            #         except Exception as ex:
+            #             print(ex)
+
+            #     if mainn_init.sl_strategy == 3:
+            #         sl1, tp1 = mainn_init.sl_generator_three(self.data, self.signal1[-1])
+            #         try:
+            #             self.buy(sl=sl1, tp=tp1, size=self.mysize)
+            #         except Exception as ex:
+            #             print(ex)
+
+
+            # elif self.signal1[-1] == 1 and len(self.trades) == 0: 
+            # # if self.data.bollinger_engulfing_signal[-1] == 1 and len(self.trades) == 0:
+            #     # print(self.data.bollinger_engulfing_signal)
+            #     if mainn_init.sl_strategy == 1:
+            #         sl1 = mainn_init.sl_generator_one(self.data, self.signal1[-1])
+            #         try:
+            #             self.sell(sl=sl1, size=self.mysize)
+            #         except:
+            #             pass
+            #     if mainn_init.sl_strategy == 2:
+            #         sl1, tp1 = mainn_init.sl_generator_two(self.data, self.signal1[-1])
+            #         try:
+            #             self.sell(sl=sl1, tp=tp1, size=self.mysize)
+            #         except Exception as ex:
+            #             print(ex)
+
+            #     if mainn_init.sl_strategy == 3:
+            #         sl1, tp1 = mainn_init.sl_generator_three(self.data, self.signal1[-1])
+            #         try:
+            #             self.sell(sl=sl1, tp=tp1, size=self.mysize)
+            #         except Exception as ex:
+            #             print(ex)
+    
+
+        # def next(self):
+        #     super().next()
+        #     TPSLRatio = 1
+            
+        #     #if len(self.trades)>0:            
+        #     #    if self.trades[-1].is_long and self.data.RSI[-1]>=70:
+        #     #        self.trades[-1].close()
+        #     #    elif self.trades[-1].is_short and self.data.RSI[-1]<=30:
+        #     #        self.trades[-1].close()
+                    
+        #     if len(self.trades)>0:            
+        #         if self.trades[-1].is_long and self.data.Heiken_Open[-1]>=self.data.Heiken_Close[-1]:
+        #             self.trades[-1].close()
+        #         elif self.trades[-1].is_short and self.data.Heiken_Open[-1]<=self.data.Heiken_Close[-1]:
+        #             self.trades[-1].close()
+            
+        #     if self.signal1==2 and len(self.trades)==0:   
+        #         sl1 = self.data.SLSignal[-1]
+        #         tp1 = self.data.Close[-1]+(self.data.Close[-1] - sl1)*TPSLRatio
+        #         self.buy(sl=sl1, tp=tp1, size=self.mysize)
+            
+        #     elif self.signal1==1 and len(self.trades)==0:         
+        #         sl1 = self.data.SLSignal[-1]
+        #         tp1 = self.data.Close[-1]-(sl1 - self.data.Close[-1])*TPSLRatio
+        #         self.sell(sl=sl1, tp=tp1, size=self.mysize)
+
+
+# /////////////////////// 3 ///////////////////////////////////////////////
+
+        # def next(self):
+        #     super().next()
+        #     TPSLRatio = 1.618
+
+        #     if self.signal1==2 and len(self.trades)==0:   
+        #         sl1 = min(self.data.Low[-2], self.data.Low[-1])
+        #         tp1 = self.data.Close[-1] + abs(self.data.Close[-1]-sl1)*TPSLRatio
+        #         self.buy(sl=sl1, tp=tp1, size=self.mysize)
+            
+        #     elif self.signal1==1 and len(self.trades)==0:         
+        #         sl1 = max(self.data.High[-2], self.data.High[-1])
+        #         tp1 = self.data.Close[-1] - abs(sl1-self.data.Close[-1])*TPSLRatio
+        #         self.sell(sl=sl1, tp=tp1, size=self.mysize)
