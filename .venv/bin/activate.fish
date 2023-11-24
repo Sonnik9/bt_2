@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/kali/Desktop/ALL_PROJECT/TREADING/BACKTEST_SPOT_ALERT_BOT/.venv"
+set -gx VIRTUAL_ENV "/home/kali/Desktop/ALL_PROJECT/TREADING/BACKTEST_/.venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

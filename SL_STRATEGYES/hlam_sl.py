@@ -165,3 +165,23 @@
     #     }
 
     #     return piv_repl
+
+
+    # def sl_generator_two(self, data):
+    #     SL_Signal = [0] * len(data)
+    #     TP_Signal = [0] * len(data)
+    #     SLbackcandles = 30
+
+    #     for row in range(SLbackcandles, len(data)):
+    #         defender = data['ordersignal'].iloc[row]
+    #         if data['ordersignal'].iloc[row] == 2 or data['ordersignal'].iloc[row] == 1:                
+    #             sl, tp = self.sl_tp_calculations(data.iloc[:row], defender)
+    #             SL_Signal[row] = sl
+    #             TP_Signal[row] = tp
+                
+    #     data.loc[:, 'SLSignal'] = SL_Signal
+    #     data.loc[:, 'TPSignal'] = TP_Signal
+    #     # data.loc[:, 'SL_S_Signal'] = SL_S_Signal
+    #     # data.loc[:, 'TP_S_Signal'] = TP_S_Signal
+    #     # print(data.loc[:, 'TPSignal'].to_list())
+    #     return data

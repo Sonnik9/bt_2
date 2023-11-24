@@ -58,7 +58,7 @@ class HEIKEN_ASHI_PATTERN(INIT_PARAMS):
         return df
 
 
-    def totalSignal(self, df):
+    def totalSignal_1(self, df):
         ordersignal = [0] * len(df)
 
         for i in range(0, len(df)):
@@ -86,5 +86,17 @@ class HEIKEN_ASHI_PATTERN(INIT_PARAMS):
         print(f"ordersignal_buy_count: {ordersignal_buy_count}")
         print(f"ordersignal_sell_count: {ordersignal_sell_count}")
         return df
+    
+    def init_heiken_pattern(self, data):
+        data = self.HeikenPreparators(data)
+        data = data[data.Open != data.Close]
+        data = self.HeikenSignal1(data)
+        data = self.totalSignal_1(data)
+        print(data)
+        # data.dropna(inplace=True)
+
+        return data
+
+
 
 
